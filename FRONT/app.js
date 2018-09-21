@@ -13,7 +13,8 @@ function setConnected(connected) {
 }
 
 function connect() {
-    var socket = new SockJS('/SpringWebSocket/gs-guide-websocket');
+    var socket = new SockJS('http://localhost:16162/SpringWebSocket/gs-guide-websocket');
+    console.log(socket);
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         setConnected(true);
